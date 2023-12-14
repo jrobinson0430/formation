@@ -1,0 +1,40 @@
+/*
+'''
+❓ PROMPT
+Given a linked list and a target value, return the index of the first occurrence of that value in the linked list. The index should be zero-indexed.
+
+Example(s)
+list1 = 1 -> 2 -> 3 -> 4 -> 5
+
+firstIndexInLL(list1, 9) == -1
+firstIndexInLL(list1, 3) == 2
+ 
+
+🔎 EXPLORE
+List your assumptions & discoveries:
+ 
+
+Insightful & revealing test cases:
+ 
+
+🧠 BRAINSTORM
+What approaches could work?
+Algorithm 1:
+Time: O()
+Space: O()
+ 
+
+📆 PLAN
+Outline of algorithm #: 
+ 
+
+🛠️ IMPLEMENT
+function firstIndexInLL(node, target) {
+def firstIndexInLL(node: Node, target: int) -> int:
+ 
+
+🧪 VERIFY
+Run tests. Methodically debug & analyze issues.
+
+'''
+*/

@@ -1,0 +1,40 @@
+/*
+'''
+❓ PROMPT
+A bug in the Formation session tool accidentally duplicated some Fellows in sessions. Given an array of names representing Fellows in a session, return an array of the distinct Fellows. The array must be in the same order as the input.
+
+Follow-up question:
+How would removing the Fellows in place, instead of using a new output array, affect the algorithm's runtime?
+
+Example(s)
+["oliver", "pixel", "oliver", "pinky"] => ["oliver", "pixel", "pinky"]
+ 
+
+🔎 EXPLORE
+List your assumptions & discoveries:
+ if we start from the end of the array we can remove the duplicates as we go, but that will effect the order of fellows in the array.
+
+Insightful & revealing test cases:
+ 
+
+🧠 BRAINSTORM
+What approaches could work?
+Algorithm 1:
+Time: O(N)
+Space: O(1)
+ 
+
+📆 PLAN
+Outline of algorithm #: 
+ 
+
+🛠️ IMPLEMENT
+function removeDuplicateFellows(fellows) {
+def removeDuplicateFellows(fellows: list[str]) -> list[str]:
+ 
+
+🧪 VERIFY
+Run tests. Methodically debug & analyze issues.
+
+'''
+*/

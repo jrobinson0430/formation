@@ -1,0 +1,43 @@
+/*
+'''
+❓ PROMPT
+We have Fellows at Formation that are waiting for their resume to be reviewed. Given an input dictionary mapping from Fellow name to an integer representing the timestamp they requested a review, return an array of Fellows that arrived earliest (at the exact same time)
+
+Example(s)
+fellowTimes = {"oliver": 3, "tobey": 3}
+earliestFellows(fellowTimes) == ["oliver", "tobey"]
+
+fellowTimes = {"oliver": 3, "pinky": 4, "pixel": 2, "tobey": 1}
+earliestFellows(fellowTimes) == ["tobey"]
+ 
+
+🔎 EXPLORE
+List your assumptions & discoveries:
+* Must determine which integer represents the earliest time.
+Iterate over dictionary searching for Fellows with the corresponding integer value
+ 
+
+Insightful & revealing test cases:
+ * What happens if the dictionary is empty?
+
+🧠 BRAINSTORM
+What approaches could work?
+Algorithm 1:
+Time: O()
+Space: O()
+ 
+
+📆 PLAN
+Outline of algorithm #: 
+ 
+
+🛠️ IMPLEMENT
+function earliestFellows(fellowTimes) {
+def earliestFellows(fellowTimes: dict) -> list[str]:
+ 
+
+🧪 VERIFY
+Run tests. Methodically debug & analyze issues.
+
+'''
+*/
