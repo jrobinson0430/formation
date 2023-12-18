@@ -190,3 +190,34 @@ console.log(
     findCompatibleRestaurantsBetween(nedsChoices, marysChoices)
   ) === JSON.stringify(["Costco Food Court"])
 );
+
+
+// robs solution
+function choiceList(choices1, choices2) {
+  const sum = (arr) => arr.reduce((a, b) => a + +b, 0);
+
+  const counts = [
+    ...Object.entries(choices1),
+    ...Object.entries(choices2),
+  ].reduce((p, [i, e]) => ({ ...p, [e]: p[e] ? [...p[e], i] : [i] }), {});
+
+  let lowest = [" "];
+  let lowSum = Infinity;
+
+  let choiceFreq;
+  let choiceSum;
+
+  for (let choice in counts) {
+    choiceFreq = counts[choice].length; // either 1 or 2
+    choiceSum = sum(counts[choice]);
+
+    if (choiceSum === lowSum && choiceFreq === 2) {
+      lowest.push(choice);
+    } else if (choiceFreq === 2 && choiceSum < lowSum) {
+      lowest = [choice];
+      lowSum = choiceSum;
+    }
+  }
+
+  return lowest;
+}
