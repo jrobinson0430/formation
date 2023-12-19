@@ -1,6 +1,4 @@
 /*
-Question 3 of 6
-1:48:27
 
 Given a square matrix of integers, sort it in ascending order.
 
