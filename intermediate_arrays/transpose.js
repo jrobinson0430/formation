@@ -125,3 +125,20 @@ console.log(transpose([
 ]));
 
 
+// ==================ROB ====================== //
+
+const transpose = (matrix) =>
+  matrix.reduce(
+    (prev, curr) => prev.map((a, i) => [...a, curr[i]]),
+    Array(matrix[0].length).fill([])
+  );
+
+  function transpose(matrix) {
+    let result = [];
+
+    for (let i = 0; i < matrix[0].length; i += 1) {
+      result.push(matrix.map((arr) => arr[i]));
+    }
+
+    return result;
+  }
