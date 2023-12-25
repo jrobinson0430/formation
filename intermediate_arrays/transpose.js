@@ -129,7 +129,7 @@ console.log(transpose([
 
 const transpose = (matrix) =>
   matrix.reduce(
-    (prev, curr) => prev.map((a, i) => [...a, curr[i]]),
+    (prev, curr) => prev.map((arr, i) => [...arr, curr[i]]),
     Array(matrix[0].length).fill([])
   );
 
