@@ -79,12 +79,13 @@ Run tests. Methodically debug & analyze issues.
 
 // I never even thought to add another nested loop.
 // i was able to get half of the correct values but was missing several in between and had to go to the solution in order to figure it out. definitely need to spend some time disecting this.
-function matrixMultiply(a, b) {
+function matrixMultipaly(a, b) {
   const aCol = a.length;
   const aRow = a[0].length;
   const bRow = b[0].length;
 
   const result = Array.from(Array(aCol), () => new Array(bRow).fill(0));
+
 
   for (let i = 0; i < aCol; i++) {
     for (let j = 0; j < bRow; j++) {
@@ -97,6 +98,25 @@ function matrixMultiply(a, b) {
   }
   return result;
 }
+// function matrixMultipaly(a, b) {
+//   const aCol = a.length;
+//   const aRow = a[0].length;
+//   const bRow = b[0].length;
+
+  // const result = Array.from(Array(aCol), () => new Array(bRow).fill(0));
+
+
+//   for (let i = 0; i < aCol; i++) {
+//     for (let j = 0; j < bRow; j++) {
+//       let value = 0;
+//       for (let k = 0; k < aRow; k++) {
+//         value += a[i][k] * b[k][j];
+//       }
+//       result[i][j] = value;
+//     }
+//   }
+//   return result;
+// }
 
 let a = [[]];
 let b = [[]];
@@ -164,3 +184,28 @@ console.log(
       [490, 640],
     ])
 );
+
+function matrixMultiply(matrix1, matrix2) {
+  tMatrix2 = transpose(matrix2);
+
+  let result = [],
+    temp = [];
+
+  for (let i = 0; i < matrix1.length; i += 1) {
+    let [oper1A, oper2A] = matrix[i];
+
+    for (let j = 0; j < tMatrix2.length; j += 1) {
+      let [oper1B, oper2B] = tMatrix2[j];
+
+      temp.push(oper1A * oper1B + oper2A * oper2B);
+    }
+
+    result.push(temp);
+
+    temp = [];
+  }
+
+  return result;
+}
+
+// I needed to use the transpose( ) I sent the other day. Are the result and temp helper arrays here unnecessary?

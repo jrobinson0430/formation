@@ -87,7 +87,7 @@ Run tests. Methodically debug & analyze issues.
 
 */
 
-function broadcastTime(network) {
+function broadcastTaime(network) {
   if (!network) return 0;
 
   let numOfSeconds = 0;
@@ -244,4 +244,29 @@ function broadcastTime2(network) {
   }
 
   return seconds;
+}
+
+function broadcastTime(matrix) {
+  const cornerVals = [
+    0,
+    matrix[0].length - 1,
+    matrix.length - 1,
+    matrix.length - 1 + matrix[0].length - 1,
+  ];
+
+  let update = 0;
+
+  for (let i = 0; i < matrix.length; i += 1) {
+    for (let j = 0; j < matrix[i].length; j += 1) {
+      if (matrix[i][j] === 1) {
+        update = i + j;
+
+        break;
+      }
+    }
+  }
+  return cornerVals.reduce(
+    (p, c) => Math.max(p, Math.abs(update - c)),
+    -Infinity
+  );
 }

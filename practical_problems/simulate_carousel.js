@@ -116,20 +116,15 @@ function simulateCarousel(apps, commands) {
 
   for (let command of commands) {
     if (command === "scroll up") {
-      // index++
-      // if (index === apps.length) index = 0;
+      // prevents index from going beyond the length of the apps arr
       index = (index + 1) % appCount;
     } else if (command === "scroll down") {
-      // index--
-      // if (index === -1) index = apps.length - 1;
-
       // We need to add num_apps to ensure that the result is positive and within the bounds of the list.
       index = (index - 1 + appCount) % appCount;
     } else {
       output.push(apps[index]);
     }
   }
-
   return output;
 }
 
