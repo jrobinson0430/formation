@@ -103,6 +103,23 @@ function reverse2(head) {
   return previous;
 }
 
+function reverseLLRecursive(head) {
+  // base case for recursive call
+  if (head === null || head.next === null) return head;
+
+  // recursively calls function until we reach the base case (the tail)
+  // stores the newHead in order to return it
+  const newHead = reverseLLRecursive(head.next);
+
+  // makes new connection
+  head.next.next = head;
+
+  // breaks the old connection
+  head.next = null;
+
+  return newHead;
+}
+
 // Test Cases
 var LL1 = new ListNode(
   13,
