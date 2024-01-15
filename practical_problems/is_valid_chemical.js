@@ -89,7 +89,6 @@ function is_balanced(str) {
       count = count ? parseInt(count) : 1;
       // multiply count and coefficient
       count *= coefficient;
-      // console.log(atoms)
       // add to dictionary
       if (build) {
         atomMap.set(element, (atomMap.get(element) | 0) + count);
