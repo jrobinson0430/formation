@@ -91,3 +91,23 @@ var binaryTreePathsRec = function (root) {
   return allPaths;
 
 };
+
+function find_path(root) {
+  const allPaths = [];
+
+  function dfs(node, current = []) {
+    current.push(node.value);
+    if (!node.left && !node.right) {
+      allPaths.push([...current]);
+    }
+
+    node.left && dfs(node.left, current);
+    node.right && dfs(node.right, current);
+
+    current.pop();
+  }
+
+  dfs(root);
+  console.log(allPaths);
+  return allPaths
+}
