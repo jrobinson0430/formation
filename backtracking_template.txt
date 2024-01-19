@@ -19,30 +19,3 @@ Base  Case
 9. Are the base cases ordered properly? Are we avoiding arms-length recursion?
 
   *** Short-circuiting the base case, also known as arm's-length recursion, consists of checking the base case before making a recursive call i.e., checking if the next call will be the base case, instead of calling and then checking for the base case. ***
-
-  JOHN | ''
-    OHN | J
-      HN  | JO
-        N | JOH
-          '' | JOHN           X = 1
-          '' | JOH            X = 2
-        N | JO
-          '' | JON            X = 3
-          '' | JO             X = 4
-      HN | J
-        N | JH
-        '' | JHN              X = 5
-
-
-ABC | 0              x = 1
-CBA | 0 | 0
-  CBA | 1           X = 2
-  BCA | 1 | 0
-    CBA | 2        X = 3
-    ABC | 2 | 0
-      ABC | 3      X = 4
-    CBA | 2 | 0
-    CAB | 2 | 1
-      CAB | 3 
-    CBA | 2 | 1
-
