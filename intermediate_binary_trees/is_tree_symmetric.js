@@ -12,7 +12,7 @@
  */
 var isSymmetric = function (root) {
   /*
-- this is tricky because i can see a BST solution more clearly even though i dont feel like it is the correct route in this case. If we do a BST and obtain the node values at each level, we can then traverse the matrix we created, checking each array using a 2 pointer approach. if the values are equal until we reach the stop condition then we know that level is symmetrical.
+- this is tricky because i can see a BFS solution more clearly even though i dont feel like it is the correct route in this case. If we do a BST and obtain the node values at each level, we can then traverse the matrix we created, checking each array using a 2 pointer approach. if the values are equal until we reach the stop condition then we know that level is symmetrical.
 
 - the recursive solution to me is a bit trickier. if we are determining symmetry we could do a DFS checking each node on the left side to its counterpart on the right. i am going to flesh out the first algo first and see if i can figure out the DFS
 
