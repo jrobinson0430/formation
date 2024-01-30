@@ -51,28 +51,27 @@ Run tests. Methodically debug & analyze issues.
 
 '''
 */
-function generateNDigitTernaries(n) {
-  const allNumbers = [];
 
-  function helper(number = []) {
-    if (number.length === n) {
-      allNumbers.push(number.join(""));
-      return;
+function generateNDigitTernaries(n) {
+  const ternaries = [];
+  let ternary = [];
+
+  function backtrack() {
+    if (ternary.length === n) {
+      return ternaries.push(ternary.join(""));
     }
 
-    // this is the backtracking part of the problem
     for (let i = 0; i < 3; i++) {
-      number.push(i);
-      helper(number);
-      number.pop();
+      if (!ternary.length && n > 1 && i == 0) continue;
+      ternary.push(i);
+      backtrack();
+      ternary.pop();
     }
   }
-  if (n === 1) allNumbers.push("0");
 
-  // calls the helper with either a 1 or a 2 in the starting position
-  for (let i = 1; i < 3; i++) helper([i]);
-
-  return allNumbers;
+  backtrack();
+  console.log(ternaries);
+  return ternaries;
 }
 
 console.log(

@@ -27,3 +27,26 @@ function permute(nums) {
 }
 
 console.log(permute([1, 2, 3]));
+
+var permute = function (nums) {
+  const permutations = [];
+  let permutation = [];
+
+  function backtrack() {
+    console.log(permutation);
+    if (permutation.length === nums.length) {
+      return permutations.push([...permutation]);
+    }
+
+    for (let num of nums) {
+      if (permutation.includes(num)) continue;
+      permutation.push(num);
+      backtrack();
+      permutation.pop();
+    }
+  }
+
+  backtrack();
+
+  return permutations;
+};
