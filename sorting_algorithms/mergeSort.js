@@ -45,3 +45,30 @@ const testArr1 = [1, 3, 5, 7, 9];
 const testArr2 = [0, 2, 4, 6, 8, 10];
 
 merge(testArr1, testArr2);
+
+
+function mergeSort(arr) {
+  if (arr.length <= 1) return arr;
+
+  const mid = Math.floor(arr.length / 2);
+  let arr1 = mergeSort(arr.slice(0, mid));
+  let arr2 = mergeSort(arr.slice(mid));
+
+  return merge(arr1, arr2);
+
+  function merge(one, two) {
+    let mergedArr = [];
+
+    while (one.length && two.length) {
+      if (one[0] <= two[0]) {
+        mergedArr.push(one.shift());
+      } else {
+        mergedArr.push(two.shift());
+      }
+    }
+
+    return [...mergedArr, ...one, ...two];
+  }
+}
+
+console.log(mergeSort([4, 2, 1, 3, 5]));

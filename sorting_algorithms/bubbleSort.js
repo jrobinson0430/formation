@@ -24,7 +24,7 @@ function bubbleSort2(arr) {
         noSwaps = false;
       }
     }
-    if (noSwaps) break;0
+    if (noSwaps) break;
   }
   console.log(arr);
 }
@@ -32,6 +32,7 @@ function bubbleSort2(arr) {
 // bubbleSort is optimized using a breakout condition if the arr is nearly sorted. If during a pass, no swaps are made then you know the arr is completed sorted and does not need to continue to iterate.
 
 function bubbleSortRec(nums) {
+
   let swapped = false;
   do {
     swapped = false;

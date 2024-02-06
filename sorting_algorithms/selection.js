@@ -17,12 +17,7 @@ function selectionSort(array) {
         lowestValIdx = j;
       }
     }
-    // swap approach 1
-    // const temp = array[i];
-    // array[i] = array[lowestValIdx]
-    // array[lowestValIdx] = temp;
 
-    // swap approach 2 (new syntax)
     [array[lowestValIdx], array[i]] = [array[i], array[lowestValIdx]];
   }
   return array;
