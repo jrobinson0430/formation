@@ -58,3 +58,43 @@ var numsSameConsecDiff = function (n, k) {
   backtrack();
   return result;
 };
+
+// their solution
+function numsSameConsecDiff(n, k) {
+  const results = [];
+  const digits = [];
+
+  function toValue() {
+    let value = 0;
+    for (const d of digits) {
+      value = value * 10 + d;
+    }
+    return value;
+  }
+
+  function dfs() {
+    const lastDigit = digits[digits.length - 1];
+    if (digits.length === n) {
+      results.push(toValue());
+      return;
+    }
+    if (lastDigit - k >= 0) {
+      digits.push(lastDigit - k);
+      dfs();
+      digits.pop();
+    }
+    if (k != 0 && lastDigit + k <= 9) {
+      digits.push(lastDigit + k);
+      dfs();
+      digits.pop();
+    }
+  }
+
+  for (let i = 1; i <= 9; i++) {
+    digits.push(i);
+    dfs();
+    digits.pop();
+  }
+
+  return results;
+}
