@@ -1,3 +1,0 @@
-/* Return the reverse of the array
-
-*/

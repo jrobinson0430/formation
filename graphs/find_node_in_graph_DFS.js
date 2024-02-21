@@ -90,6 +90,7 @@ class Node {
   }
 }
 
+
 // my implementation that utilizes a boolean
 function hasPathTo(node, target) {
   if (!node) return false;
