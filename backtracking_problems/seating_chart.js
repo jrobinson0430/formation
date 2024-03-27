@@ -11,7 +11,7 @@ function seatingCharts(students) {
 
   // stores the current path we are on
   const stack = [];
-
+  
   // stores all the seating arrangements we find
   const result = [];
 

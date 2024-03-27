@@ -4,7 +4,6 @@ You're given a 2d array with 1's and 0's. 1's represent walls, and 0's represent
 
 Output the shortest path a robot should take from the top left to the bottom right. If there are multiple shortest paths, any path is valid. If there is no valid path, return None/null.
  
-
 EXAMPLE(S)
 Maze:
 0 0 0 0
@@ -177,3 +176,14 @@ console.log(
 //                 newpath.append(neighbor)
 //                 q.append((neighbor, newpath))
 //     return None
+
+
+/*
+
+    [0, 0, 0, 0, 0],
+    [1, 1, 0, 1, 0],
+    [0, 0, 0, 1, 0],
+    [1, 1, 1, 1, 0],
+    [0, 1, 1, 0, 0],
+    [0, 0, 0, 0, 0],
+*/
