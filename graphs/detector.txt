@@ -1,0 +1,111 @@
+/*
+def is_undirected(adj_list):
+  for n in adj_list.keys():
+    for neighbor in adj_list[n]:
+      if n not in adj_list[neighbor]:
+        return False
+  return True
+
+def detect_cycle(adj_list):
+  states = {}
+  for node in adj_list.keys():
+    states[node] = 0
+  def detect(node):
+    if states[node] == 1:
+      return True
+    if states[node] == 2:
+      return False
+    states[node] = 1
+    for n in adj_list[node]:
+      if detect(n):
+        return True
+    states[node] = 2
+  for n in adj_list.keys():
+    if states[n] == 0:
+      if detect(n):
+        return True
+  return False
+  
+def get_sources(adj_list):
+  all_nodes = set(adj_list.keys())
+  
+  for neighbors in adj_list.values():
+    for n in neighbors:
+      if n in all_nodes:
+        all_nodes.remove(n)
+  return list(all_nodes)
+  
+def is_tree(adj_list, source, seed_visited=None):
+  visited = seed_visited or set()
+  def helper(curr):
+    if curr in visited:
+      return False
+    visited.add(curr)
+    for c in adj_list[curr]:
+      if not helper(c):
+        return False
+    return True
+  return helper(source)
+    
+def is_forest(adj_list, sources):
+  all_visited = set()
+  for source in sources:
+    is_a_tree = is_tree(adj_list, source, all_visited)
+    if not is_a_tree:
+      return False
+  return True
+
+def build_adjacency_list(nodes):
+  output = {}
+  for node in nodes:
+    output[node] = node.neighbors
+  return output
+
+def detect_graph(nodes):
+  adj_list = build_adjacency_list(nodes)
+
+  if is_undirected(adj_list):
+    return 'Undirected Graph'
+  print("This doesn't seem undirected...")
+  
+  has_cycle = detect_cycle(adj_list)
+  if has_cycle:
+    print("Found a cycle!")
+    return 'Directed Cyclic Graph'
+  else:
+    print("Hmm... this is at least a DAG. Let's see if it's a forest, or tree...")
+    sources = get_sources(adj_list)
+    print("I've found {} source(s)".format(len(sources)))
+    if len(sources) == 0:
+      raise Exception('May have a bug... oops! Ping jeremyaguilon1@gmail.com :P')
+    if len(sources) == 1:
+      print("Since there's one source, this may be a tree, unless there's a node with multiple parents")
+      if is_tree(adj_list, sources[0]):
+        return 'Tree'
+      else:
+        print("Nope! Not a tree")
+        return 'Directed Acyclic Graph'
+    
+    print('Multiple source nodes... could be a forest?')
+    if is_forest(adj_list, sources):
+      return 'Forest'
+    print('Guess not.')
+    return 'Directed Acyclic Graph'
+
+def run_detector(nodes):
+  print("""
+  Author's note:
+  This code is pretty experimental. 
+  Email jeremyaguilon1@gmail.com if I messed up :)
+  ~~~
+  
+  I'm going to guess if this graph is a:
+  
+  A) Undirected Graph
+  B) DAG
+  C) Forest
+  D) Tree
+  E) Directed Graph
+  """)
+  print('\n\nFinal Guess: I think this is a ' + detect_graph(nodes))
+  */

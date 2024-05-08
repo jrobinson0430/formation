@@ -1,0 +1,21 @@
+Choosing
+1. We generally iterate over decisions. What are we iterating over here? What are the choices  for each  decision?  Do  we  need  a  for  loop?
+
+Exploring
+3. How can we represent that choice? How Should we modify the parameters and store our previous choices (avoiding arms-length recursion). Do we need to use a wrapper due to extra parameters?
+
+4. How should we restrict our choices to be valid?
+
+5. How should we use the return value of the recursive calls? Are we looking for all solutions or just one?
+
+Un-choosing
+6. How do we un-modify the parameters from step 3? Do we need to explicitly un-modify, or are they copied? Are they un-modified at the same level as they were modified?
+
+Base  Case
+7. What should we do in the base case when we're out of decisions (usually return true)?
+
+8. Is there a case for when there aren't any valid choices left or a 'bad' state is reached (usually return false)?
+
+9. Are the base cases ordered properly? Are we avoiding arms-length recursion?
+
+  *** Short-circuiting the base case, also known as arm's-length recursion, consists of checking the base case before making a recursive call i.e., checking if the next call will be the base case, instead of calling and then checking for the base case. ***

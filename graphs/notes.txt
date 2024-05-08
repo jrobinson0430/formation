@@ -1,0 +1,24 @@
+different ways to represent a graph.
+
+// typically what you will get during interviews. vertex/edge list
+vertices: [1,2,3,4,5]
+edges: [[1,2],[1,3],[3,1],[3,4],[4,5],[4,2]]
+Node ID to row index in matrix: {"1":0,"2":1,"3":2,"4":3,"5":4}
+
+Adjacency Matrix:
+0,1,1,0,0 
+0,0,0,0,0 
+1,0,0,1,0 
+0,1,0,0,1 
+0,0,0,0,0 
+
+(1, [2,3])
+(2, [])
+(3, [1,4])
+(4, [5,2])
+(5, [])
+
+Vertex List: [1,2,3,4]
+Edge List: [[1,2],[1,3],[3,4]]
+Adjacency List:  { '1': [ 2, 3 ], '2': [], '3': [ 4 ], '4': [] }
+
